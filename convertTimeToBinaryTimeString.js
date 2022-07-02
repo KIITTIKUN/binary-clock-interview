@@ -13,5 +13,3 @@ const getCurrentTime = () => {
   const seconds = currentTime.getSeconds().toString().padStart(2, '0');
   return `${hours}${minutes}${seconds}`;
 };
-
-console.log(convertTimeToBinaryTimeString(getCurrentTime()));
