@@ -1,0 +1,29 @@
+body{
+    background-color: #27272c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.clock{
+    width: 222px;
+    height: 103px;
+    display: flex;
+}
+.time-unit{
+    width: 33.33%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.unit{
+    width: 40%;
+    height: 100%;
+}
+.pip{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 5px;
+    background-color: #525252;
+}
