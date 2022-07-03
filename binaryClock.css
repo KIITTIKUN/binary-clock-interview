@@ -29,4 +29,13 @@ body{
 }
 .light{
     background-color: forestgreen ;
+    transform: scale(1.1);
+}
+.digital-time{
+    width: 15px;
+    height: 20px;
+    background-color: rgb(1, 121, 173);
+    margin: 5px;
+    padding-left: 5px;
+    border-radius: 3px;
 }

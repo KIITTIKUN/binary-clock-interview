@@ -30,7 +30,15 @@ const processBinaryTime = (binary) => {
     }
   }
 };
+const processDigitalTime = () => {
+  let digitalTime = getCurrentTime();
+  for (let i = 0; i < getCurrentTime().length; i++) {
+    let div = document.getElementsByClassName('digital-time')[i];
+    div.innerHTML = `${digitalTime[i]}`;
+  }
+};
 setInterval(() => {
   const binaryTime = convertTimeToBinary(getCurrentTime());
   processBinaryTime(binaryTime);
+  processDigitalTime();
 }, 1000);
