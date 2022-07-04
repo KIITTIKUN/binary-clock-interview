@@ -1,8 +1,7 @@
 body{
     background-color: #27272c;
     display: flex;
-    flex-direction:column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 100vh;
 }
@@ -42,11 +41,12 @@ body{
     color: #FFFFFF;
 }
 .header{
-    margin: -10px;
     width: 100vw;
     height: 40px;
     background-color: rgb(29, 31, 33);
     box-shadow: 8px 4px 2px rgb(37, 36, 36);
+    position: fixed;
+    top: 0 ;
 }
 .project-name{
     margin-top: 5px;
@@ -55,11 +55,12 @@ body{
     color: #FFFFFF;
 }
 .footer{
-    margin: -10px;
     width: 100vw;
     height: 40px;
     background-color: rgb(29, 31, 33);
     box-shadow: 8px -5px 2px rgb(37, 36, 36);
+    position: fixed;
+    bottom: 0 ;
 }
 .director-name{
     margin-top: 5px;
