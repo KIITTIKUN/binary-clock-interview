@@ -13,32 +13,37 @@ const getCurrentTime = () => {
   const seconds = currentTime.getSeconds().toString().padStart(2, '0');
   return `${hours}${minutes}${seconds}`;
 };
-const processBinaryTime = (binary) => {
+
+const eachDivPip = (i, j) => {
+  return document
+    .getElementsByClassName('unit')
+    [i].getElementsByClassName('pip')[j];
+};
+
+const isBinaryOn = (binary, i, j) => {
+  return binary[i][j] === '1';
+};
+
+const processBinaryClock = (binary) => {
   for (let i = 0; i < binary.length; i++) {
     for (let j = 0; j < binary[i].length; j++) {
-      if (binary[i][j] === '1') {
-        document
-          .getElementsByClassName('unit')
-          [i].getElementsByClassName('pip')
-          [j].classList.add('light');
-      } else {
-        document
-          .getElementsByClassName('unit')
-          [i].getElementsByClassName('pip')
-          [j].classList.remove('light');
-      }
+      isBinaryOn(binary, i, j)
+        ? eachDivPip(i, j).classList.add('light')
+        : eachDivPip(i, j).classList.remove('light');
     }
   }
 };
-const processDigitalTime = () => {
+
+const processDigitalClock = () => {
   let digitalTime = getCurrentTime();
   for (let i = 0; i < getCurrentTime().length; i++) {
     let div = document.getElementsByClassName('digital-time')[i];
     div.innerHTML = `${digitalTime[i]}`;
   }
 };
+
 setInterval(() => {
   const binaryTime = convertTimeToBinary(getCurrentTime());
-  processBinaryTime(binaryTime);
-  processDigitalTime();
+  processBinaryClock(binaryTime);
+  processDigitalClock();
 }, 1000);
